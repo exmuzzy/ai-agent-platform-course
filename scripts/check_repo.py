@@ -123,6 +123,7 @@ def validate(root):
         "prompts/start-course-build.md", "sources/registry.json",
         "modules/manifest.json", "workflow/backlog.json",
         "docs/learner-profile.md", "docs/problem-patterns.md",
+        "docs/course-website.md",
         "docs/execution/model-routing.md", "docs/execution/research-workflow.md",
         "prompts/subagent-roles.md", "templates/research-packet.md", "templates/use-case.md",
     ]
@@ -176,7 +177,7 @@ def validate(root):
                 errors.append(f"{mid}: unknown source {sid}")
         if module.get("status") != "planned":
             for name in ("README.md", "lesson-01.md", "lesson-02.md",
-                         "lab.md", "assessment.md", "solutions.md", "evidence.json"):
+                         "lab.md", "assessment.md", "quiz.json", "solutions.md", "evidence.json"):
                 if not (root / value / name).is_file():
                     errors.append(f"{mid}: status requires {name}")
     errors += validate_dag(tasks, "depends_on")

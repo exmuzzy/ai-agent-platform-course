@@ -71,6 +71,22 @@ class RepositoryChecks(unittest.TestCase):
             "docs/kernel-roadmap.md",
         }.issubset(tasks["K00"]["scope"]))
 
+    def test_site_contract_precedes_authorship_and_interface(self):
+        tasks = {item["id"]: item for item in
+                 CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"]}
+        self.assertIn("F03", tasks["W00"]["depends_on"])
+        self.assertIn("W00", tasks["P00"]["depends_on"])
+        self.assertTrue({"W00", "Q00"}.issubset(tasks["W01"]["depends_on"]))
+        self.assertIn("W01", tasks["Q01"]["depends_on"])
+
+    def test_site_publication_is_between_final_review_and_release(self):
+        tasks = {item["id"]: item for item in
+                 CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"]}
+        self.assertIn("Q01", tasks["Q02"]["depends_on"])
+        self.assertIn("Q02", tasks["Q03"]["depends_on"])
+        self.assertIn("Q03", tasks["W02"]["depends_on"])
+        self.assertTrue({"Q03", "W02"}.issubset(tasks["Q04"]["depends_on"]))
+
     def assert_kernel_release_dependencies(self, tasks):
         """Check graph/evidence shape, not authenticity of owner approval."""
         seen, pending = set(), list(tasks["Q01"]["depends_on"])
