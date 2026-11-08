@@ -322,7 +322,7 @@ ${[...unitUrl.entries()].filter(([, u]) => u.kind !== 'module').map(([id, u]) =>
     }).join('');
     const planned = allMods.filter((m) => !m.published).map((m) => `<li class="planned">${esc(m.title)} <span class="meta">в разработке</span></li>`).join('');
     const main = `<p class="lead">${esc(rt.outcome)}</p>
-<p class="role-switch">${ROLES.map((r) => `<a class="btn${r === role ? ' current' : ''}" href="${root}../${r.toLowerCase()}/"${r === role ? ' aria-current="page"' : ''}>${ROLE_NAME[r]}</a>`).join(' ')}</p>
+<p class="role-switch">${ROLES.map((r) => `<a class="btn${r === role ? ' current' : ''}" href="${root}route/${r.toLowerCase()}/"${r === role ? ' aria-current="page"' : ''}>${ROLE_NAME[r]}</a>`).join(' ')}</p>
 <h2>Шаги</h2><ol class="unit-list">${stepItems}</ol>
 ${planned ? `<h2>Позже</h2><ul class="unit-list">${planned}</ul>` : ''}`;
     put(`${dir}/index.html`, layout({ dir, page: 'route', title: rt.title || `Маршрут ${role}`, h1: rt.title || `Маршрут ${role}`, main }));
