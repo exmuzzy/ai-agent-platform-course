@@ -2,7 +2,11 @@
   "schema": "course-content-contract/1",
   "contract_version": "1.0.0",
   "status": "draft_w00",
-  "roles": ["USER", "BUILDER", "ENGINEER"],
+  "roles": [
+    "USER",
+    "BUILDER",
+    "ENGINEER"
+  ],
   "id_patterns": {
     "module": "^M0[0-9]$",
     "lesson": "^M0[0-9]\\.L0[1-9]$",
@@ -15,16 +19,63 @@
     "proposal": "^KP-0[1-6]$"
   },
   "module_layout": {
-    "required_files": ["README.md", "lesson-01.md", "lesson-02.md", "lab.md", "assessment.md", "quiz.json", "solutions.md", "evidence.json"],
-    "generated_files": ["assessment.md section 'Тест' is generated from quiz.json"],
+    "required_files": [
+      "README.md",
+      "lesson-01.md",
+      "lesson-02.md",
+      "lab.md",
+      "assessment.md",
+      "quiz.json",
+      "solutions.md",
+      "evidence.json"
+    ],
+    "generated_files": [
+      "assessment.md section 'Тест' is generated from quiz.json"
+    ],
     "frontmatter": {
-      "README.md": ["id", "title", "version", "roles", "summary", "prerequisites", "source_ids", "est_minutes_by_role"],
-      "lesson-NN.md": ["id", "title", "version", "roles", "est_minutes", "source_ids", "cases", "capabilities"],
-      "lab.md": ["id", "title", "version", "roles", "est_minutes", "mode", "source_ids"],
-      "solutions.md": ["id", "version"],
-      "assessment.md": ["id", "version"]
+      "README.md": [
+        "id",
+        "title",
+        "version",
+        "roles",
+        "summary",
+        "prerequisites",
+        "source_ids",
+        "est_minutes_by_role"
+      ],
+      "lesson-NN.md": [
+        "id",
+        "title",
+        "version",
+        "roles",
+        "est_minutes",
+        "source_ids",
+        "cases",
+        "capabilities"
+      ],
+      "lab.md": [
+        "id",
+        "title",
+        "version",
+        "roles",
+        "est_minutes",
+        "mode",
+        "source_ids"
+      ],
+      "solutions.md": [
+        "id",
+        "version"
+      ],
+      "assessment.md": [
+        "id",
+        "version"
+      ]
     },
-    "mode_values": ["simulation", "mock_verified", "live_verified"],
+    "mode_values": [
+      "simulation",
+      "mock_verified",
+      "live_verified"
+    ],
     "role_blocks": {
       "syntax": "::: user | ::: builder | ::: engineer ... :::",
       "rule": "Блок виден только выбранной роли; блоки без метки общие. Роль ENGINEER видит свои блоки и общий текст; USER не обязан видеть engineer-блоки, но может раскрыть их кнопкой.",
@@ -38,7 +89,13 @@
       "title": "string",
       "version": "semver",
       "outcome": "string",
-      "steps": [{"ref": "lesson|lab|quiz|case id", "required": "boolean", "gate": "optional unit id that must be done first"}]
+      "steps": [
+        {
+          "ref": "lesson|lab|quiz|case id",
+          "required": "boolean",
+          "gate": "optional unit id that must be done first"
+        }
+      ]
     },
     "rule": "USER-маршрут не содержит обязательных инженерных шагов; обязательность определяется только файлом маршрута."
   },
@@ -49,19 +106,36 @@
       "module": "Mxx",
       "version": "semver",
       "pass_ratio": "number 0..1, по умолчанию 0.7",
-      "questions": [{
-        "id": "question id",
-        "type": "single | multi | boolean | find_error",
-        "roles": ["USER", "BUILDER", "ENGINEER"],
-        "prompt": "string (plain text + inline code only)",
-        "options": [{"id": "a", "text": "string"}],
-        "correct": ["option ids"],
-        "explanation": "почему верный ответ верен",
-        "wrong_explanations": {"option id": "почему этот вариант неверен"},
-        "critical": "boolean: ошибка блокирует завершение независимо от процента",
-        "source_ids": ["SRC-NN"],
-        "version": "integer; при изменении старый результат не засчитывается"
-      }]
+      "questions": [
+        {
+          "id": "question id",
+          "type": "single | multi | boolean | find_error",
+          "roles": [
+            "USER",
+            "BUILDER",
+            "ENGINEER"
+          ],
+          "prompt": "string (plain text + inline code only)",
+          "options": [
+            {
+              "id": "a",
+              "text": "string"
+            }
+          ],
+          "correct": [
+            "option ids"
+          ],
+          "explanation": "почему верный ответ верен",
+          "wrong_explanations": {
+            "option id": "почему этот вариант неверен"
+          },
+          "critical": "boolean: ошибка блокирует завершение независимо от процента",
+          "source_ids": [
+            "SRC-NN"
+          ],
+          "version": "integer; при изменении старый результат не засчитывается"
+        }
+      ]
     }
   },
   "activity_schema": {
@@ -72,8 +146,82 @@
       "decision": "auto_checked: выбор use|fix|escalate|refuse с обязательным пояснением",
       "find_error": "auto_checked: выбор внесённой ошибки в синтетическом результате"
     },
-    "result_levels": ["not_started", "self_reported", "auto_checked", "reviewer_verified"],
-    "rule": "reviewer_verified недоступен в браузере первой версии; импорт файла его не создаёт"
+    "result_levels": [
+      "not_started",
+      "self_reported",
+      "auto_checked",
+      "reviewer_verified"
+    ],
+    "rule": "reviewer_verified недоступен в браузере первой версии; импорт файла его не создаёт",
+    "block_format": {
+      "syntax": "```activity\\n{json}\\n``` внутри lab.md; JSON одной строкой допустим, один блок = одна активность",
+      "common": {
+        "id": "M00.A01 (activity pattern)",
+        "type": "checklist|field_check|decision|find_error",
+        "title": "string",
+        "scenario": "normal|forbidden|error",
+        "instruction": "string",
+        "mode": "simulation"
+      },
+      "checklist": {
+        "items": [
+          {
+            "id": "i1",
+            "text": "string"
+          }
+        ]
+      },
+      "field_check": {
+        "input": "синтетический текст (может содержать несколько абзацев)",
+        "fields": [
+          {
+            "key": "category",
+            "label": "string",
+            "expected": [
+              "допустимые значения; сверка после trim, lower-case, схлопывания пробелов"
+            ]
+          }
+        ],
+        "success": "string",
+        "failure": "string"
+      },
+      "decision": {
+        "input": "string",
+        "options": [
+          {
+            "id": "use",
+            "label": "Использовать"
+          },
+          {
+            "id": "fix",
+            "label": "Исправить"
+          },
+          {
+            "id": "escalate",
+            "label": "Передать человеку"
+          },
+          {
+            "id": "refuse",
+            "label": "Отказаться"
+          }
+        ],
+        "correct": "option id",
+        "explanation": "string",
+        "require_reason": "boolean (причина вводится, но не оценивается)"
+      },
+      "find_error": {
+        "candidate": [
+          {
+            "id": "l1",
+            "text": "строка результата"
+          }
+        ],
+        "error_ids": [
+          "l2"
+        ],
+        "explanation": "string"
+      }
+    }
   },
   "progress_schema": {
     "schema": "course-progress/1",
@@ -92,21 +240,83 @@
         }
       }
     },
-    "forbidden_fields": ["name", "email", "employee_id", "token", "key", "free_text_answers"],
-    "import_rules": ["JSON.parse без исполнения", "размер не более 262144 байт", "неизвестные ID отбрасываются с предупреждением", "версия контента не совпала: результат не засчитывается", "подтверждение перед заменой текущего прогресса"],
+    "forbidden_fields": [
+      "name",
+      "email",
+      "employee_id",
+      "token",
+      "key",
+      "free_text_answers"
+    ],
+    "import_rules": [
+      "JSON.parse без исполнения",
+      "размер не более 262144 байт",
+      "неизвестные ID отбрасываются с предупреждением",
+      "версия контента не совпала: результат не засчитывается",
+      "подтверждение перед заменой текущего прогресса"
+    ],
     "storage": "память страницы; localStorage используется только если доступно и необязательно; сайт работает при запрете хранилищ"
   },
   "build": {
     "stack": "Node 20, markdown-it 15, gray-matter; выход: статические HTML-страницы + search-index.json + manifest.json; vanilla JS без фреймворков",
     "output_dir": "site/dist",
     "links": "относительные; сайт работает под любым base path",
-    "allowlist": ["modules/M0*/", "paths/", "cases/", "docs/glossary.md", "docs/kernel-capabilities.md", "docs/kernel-proposals/", "docs/kernel-roadmap.md", "docs/fixture-contract.md", "docs/learning-paths.md", "docs/problem-patterns.md", "labs/fixtures/", "sources/registry.json"],
-    "denylist": [".local/", "research/", "workflow/", "docs/reviews/", "docs/execution/", "packets", "any path outside the allowlist"],
+    "allowlist": [
+      "modules/M0*/",
+      "paths/",
+      "cases/",
+      "docs/glossary.md",
+      "docs/kernel-capabilities.md",
+      "docs/kernel-proposals/",
+      "docs/kernel-roadmap.md",
+      "docs/fixture-contract.md",
+      "docs/learning-paths.md",
+      "docs/problem-patterns.md",
+      "labs/fixtures/",
+      "sources/registry.json"
+    ],
+    "denylist": [
+      ".local/",
+      "research/",
+      "workflow/",
+      "docs/reviews/",
+      "docs/execution/",
+      "packets",
+      "any path outside the allowlist"
+    ],
     "digest": "manifest.json содержит sha256 каждого файла и общий digest bundle"
   },
-  "pages": ["/", "route/{role}", "m/{Mxx}", "m/{Mxx}/lesson-NN", "m/{Mxx}/lab", "m/{Mxx}/quiz", "m/{Mxx}/solutions", "cases/{Uxx}", "reference/glossary", "reference/kernel", "reference/sources", "search", "progress", "downloads"],
+  "pages": [
+    "/",
+    "route/{role}",
+    "m/{Mxx}",
+    "m/{Mxx}/lesson-NN",
+    "m/{Mxx}/lab",
+    "m/{Mxx}/quiz",
+    "m/{Mxx}/solutions",
+    "cases/{Uxx}",
+    "reference/glossary",
+    "reference/kernel",
+    "reference/sources",
+    "search",
+    "progress",
+    "downloads"
+  ],
   "qa": {
-    "viewports": ["375x812", "1280x800"],
-    "must_pass": ["выбор трёх маршрутов", "прямая ссылка на урок и обновление", "квиз: ошибка, объяснение, повтор", "практика M00 normal + запрещённый сценарий", "поиск", "скачивание файла", "экспорт и импорт прогресса, включая плохой файл", "клавиатура и видимый focus", "масштаб 200%"]
+    "viewports": [
+      "375x812",
+      "1280x800"
+    ],
+    "must_pass": [
+      "выбор трёх маршрутов",
+      "прямая ссылка на урок и обновление",
+      "квиз: ошибка, объяснение, повтор",
+      "практика M00 normal + запрещённый сценарий",
+      "поиск",
+      "скачивание файла",
+      "экспорт и импорт прогресса, включая плохой файл",
+      "клавиатура и видимый focus",
+      "масштаб 200%"
+    ]
   }
 }
