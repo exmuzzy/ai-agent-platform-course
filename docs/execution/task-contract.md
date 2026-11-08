@@ -40,7 +40,7 @@
   "security_scope": "Sandbox, отсутствие реальных deploy/merge",
   "infrastructure_scope": "Версии, CI/test runner, наблюдаемость",
   "facts_not_assumptions": [
-    "Учащийся уже использует свой harness",
+    "Существующий harness предоставлен владельцем; навыки сотрудника проверяются отдельно",
     "Реальное состояние harness определяется отдельным baseline"
   ],
   "acceptance": [

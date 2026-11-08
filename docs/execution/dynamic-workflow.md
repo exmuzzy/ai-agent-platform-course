@@ -120,7 +120,7 @@ Parent нельзя завершить до `done` всех обязательн
 
 Каждому пишущему worker выделяется отдельный worktree и ветка `course/<task-id>` от известного baseline. Пути task packet являются allowlist: изменение за их пределами отклоняется, даже если оно выглядит полезным.
 
-Только оркестратор изменяет backlog, общий `sources/registry.json` и выполняет merge/integration. Integrator-worker возвращает для них delta; glossary, README и другие общие файлы он может менять лишь по явно выданной эксклюзивной аренде. Два workers не пишут общий файл одновременно.
+Только оркестратор изменяет backlog, общий `sources/registry.json`, `docs/kernel-capabilities.md`, `docs/kernel-roadmap.md` и выполняет merge/integration. Integrator-worker возвращает для них delta; glossary, README и другие общие файлы он может менять лишь по явно выданной эксклюзивной аренде. Два workers не пишут общий файл одновременно.
 
 Перед интеграцией проверяются baseline, конфликт путей и фактический diff. Нельзя накатывать patch второй раз после crash; если commit уже интегрирован, обновляется состояние, а не повторяется действие.
 

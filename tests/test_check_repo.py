@@ -59,6 +59,85 @@ class RepositoryChecks(unittest.TestCase):
         tasks = CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"]
         self.assertEqual(CHECK.validate_case_ownership(tasks), [])
 
+    def test_kernel_research_precedes_curriculum(self):
+        tasks = {item["id"]: item for item in
+                 CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"]}
+        self.assertEqual(tasks["K00"]["kind"], "expandable")
+        self.assertTrue({"F01", "F02"}.issubset(tasks["K00"]["depends_on"]))
+        self.assertIn("K00", tasks["F03"]["depends_on"])
+        self.assertTrue({
+            "docs/kernel-capabilities.md",
+            "docs/kernel-proposals/",
+            "docs/kernel-roadmap.md",
+        }.issubset(tasks["K00"]["scope"]))
+
+    def assert_kernel_release_dependencies(self, tasks):
+        """Check graph/evidence shape, not authenticity of owner approval."""
+        seen, pending = set(), list(tasks["Q01"]["depends_on"])
+        while pending:
+            task_id = pending.pop()
+            if task_id in seen:
+                continue
+            seen.add(task_id)
+            pending.extend(tasks[task_id]["depends_on"])
+        self.assertIn("K00", seen)
+        gates = {"F04", "F04-FIXTURE"}.intersection(tasks["Q01"]["depends_on"])
+        self.assertEqual(len(gates), 1)
+        if "F04-FIXTURE" in gates:
+            fixture = tasks["F04-FIXTURE"]
+            self.assertTrue({"F01", "P00"}.issubset(fixture["depends_on"]))
+            self.assertNotEqual(fixture.get("parent_id"), "F04")
+            self.assertNotIn("F04", seen)
+            self.assertEqual(tasks["F04"]["status"], "blocked")
+            # An evidence reference is mandatory; content approval is reviewed separately.
+            self.assertTrue(fixture.get("evidence"))
+
+    def fixture_edition_tasks(self):
+        """In-memory test data only; does not approve or change the real backlog."""
+        tasks = {item["id"]: item for item in
+                 copy.deepcopy(CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"])}
+        tasks["F04"]["status"] = "blocked"
+        tasks["Q01"]["depends_on"] = [
+            "F04-FIXTURE" if dep == "F04" else dep
+            for dep in tasks["Q01"]["depends_on"]
+        ]
+        tasks["F04-FIXTURE"] = {
+            "id": "F04-FIXTURE",
+            "depends_on": ["F01", "P00"],
+            "status": "planned",
+            "evidence": ["test-only/owner-approval.md"],
+        }
+        return tasks
+
+    def test_final_integration_depends_on_kernel_research_and_release_gate(self):
+        tasks = {item["id"]: item for item in
+                 CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"]}
+        self.assert_kernel_release_dependencies(tasks)
+
+    def test_fixture_edition_preserves_kernel_research_without_export_dependency(self):
+        tasks = self.fixture_edition_tasks()
+        self.assertEqual(CHECK.validate_dag(list(tasks.values()), "depends_on"), [])
+        self.assert_kernel_release_dependencies(tasks)
+
+    def test_missing_release_gate_rejected(self):
+        tasks = self.fixture_edition_tasks()
+        tasks["Q01"]["depends_on"].remove("F04-FIXTURE")
+        with self.assertRaises(AssertionError):
+            self.assert_kernel_release_dependencies(tasks)
+
+    def test_fixture_without_evidence_or_with_false_export_done_rejected(self):
+        for mutation in ("missing_evidence", "false_export_done", "wrong_parent"):
+            with self.subTest(mutation=mutation):
+                tasks = self.fixture_edition_tasks()
+                if mutation == "missing_evidence":
+                    tasks["F04-FIXTURE"]["evidence"] = []
+                elif mutation == "false_export_done":
+                    tasks["F04"]["status"] = "done"
+                else:
+                    tasks["F04-FIXTURE"]["parent_id"] = "F04"
+                with self.assertRaises(AssertionError):
+                    self.assert_kernel_release_dependencies(tasks)
+
     def test_missing_case_owner_rejected(self):
         tasks = copy.deepcopy(CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"])
         for task in tasks:
