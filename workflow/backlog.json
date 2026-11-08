@@ -72,7 +72,7 @@
       "id": "F02",
       "title": "Автономно исследовать индустрию и подходы",
       "kind": "expandable",
-      "status": "review",
+      "status": "done",
       "depends_on": [
         "F00"
       ],
@@ -95,7 +95,10 @@
         "Версии, права и условия доступа проверены"
       ],
       "evidence": [
-        "branches course/F02-R1..R4: research/packets/*"
+        "research/industry-synthesis.md",
+        "research/gaps.md",
+        "sources/registry.json",
+        "research/packets/R1-architecture-agentic-dev.md"
       ],
       "expanded": true,
       "note": "4 packets ready_for_review, reviewer not yet dispatched (bootstrap quota exhausted); R3 partial"
@@ -104,7 +107,7 @@
       "id": "K00",
       "title": "Изучить возможности ядра и подготовить предложения развития",
       "kind": "expandable",
-      "status": "planned",
+      "status": "running",
       "depends_on": [
         "F01",
         "F02"
