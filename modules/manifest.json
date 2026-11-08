@@ -43,7 +43,7 @@
     {
       "id": "M03",
       "path": "modules/M03-data-context",
-      "status": "planned",
+      "status": "draft",
       "prerequisites": [
         "M02"
       ],
