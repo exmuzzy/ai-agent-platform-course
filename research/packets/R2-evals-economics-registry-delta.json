@@ -7,7 +7,11 @@
     "date_read": "2026-11-08",
     "type": "article",
     "license_or_access": "Открытый блог, свободный доступ",
-    "claims_ids": ["C01", "C02", "C04", "C09"]
+    "claims_ids": [
+      "C01",
+      "C02",
+      "C04"
+    ]
   },
   {
     "id_suggested": "anthropic-prompt-caching",
@@ -17,7 +21,9 @@
     "date_read": "2026-11-08",
     "type": "documentation",
     "license_or_access": "Открытая страница вендора",
-    "claims_ids": ["C05"]
+    "claims_ids": [
+      "C05"
+    ]
   },
   {
     "id_suggested": "openai-evals-repo",
@@ -26,8 +32,12 @@
     "author": "OpenAI",
     "date_read": "2026-11-08",
     "type": "repository",
-    "license_or_access": "MIT (логика и данные evals); OpenAI оставляет право использовать вклады",
-    "claims_ids": ["C10"]
+    "license_or_access": "MIT, подтверждено файлом LICENSE.md",
+    "claims_ids": [
+      "C10"
+    ],
+    "commit": "8eac7a7de5215c907fbddc30efdaf316913eccdd",
+    "license_url": "https://raw.githubusercontent.com/openai/evals/main/LICENSE.md"
   },
   {
     "id_suggested": "metr-os-dev-rct-2025",
@@ -37,7 +47,10 @@
     "date_read": "2026-11-08",
     "type": "article",
     "license_or_access": "Открытый отчёт",
-    "claims_ids": ["C07", "C09"]
+    "claims_ids": [
+      "C07",
+      "C09"
+    ]
   },
   {
     "id_suggested": "cognition-dont-build-multi-agents",
@@ -45,9 +58,11 @@
     "url": "https://cognition.ai/blog/dont-build-multi-agents",
     "author": "Walden Yan (Cognition)",
     "date_read": "2026-11-08",
-    "type": "discussion",
+    "type": "article",
     "license_or_access": "Открытый блог компании",
-    "claims_ids": ["C08"]
+    "claims_ids": [
+      "C08"
+    ]
   },
   {
     "id_suggested": "zheng-judging-llm-as-judge-2023",
@@ -57,7 +72,9 @@
     "date_read": "2026-11-08",
     "type": "article",
     "license_or_access": "arXiv, открытый препринт",
-    "claims_ids": ["C03"]
+    "claims_ids": [
+      "C03"
+    ]
   },
   {
     "id_suggested": "ong-routellm-2024",
@@ -67,6 +84,20 @@
     "date_read": "2026-11-08",
     "type": "article",
     "license_or_access": "arXiv, открытый препринт",
-    "claims_ids": ["C06"]
+    "claims_ids": [
+      "C06"
+    ]
+  },
+  {
+    "id_suggested": "anthropic-multi-agent-research-2025",
+    "title": "How we built our multi-agent research system",
+    "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+    "author": "Anthropic",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "Открытая страница вендора",
+    "claims_ids": [
+      "C08"
+    ]
   }
 ]
