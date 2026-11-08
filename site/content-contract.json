@@ -1,6 +1,6 @@
 {
   "schema": "course-content-contract/1",
-  "contract_version": "1.0.0",
+  "contract_version": "1.1.0",
   "status": "draft_w00",
   "roles": [
     "USER",
@@ -15,8 +15,11 @@
     "activity": "^M0[0-9]\\.A[0-9]{2}$",
     "case": "^U(0[1-9]|1[0-2])$",
     "source": "^SRC-[0-9]{2,3}$",
-    "capability": "^KC-[AB][0-9]{2}$",
-    "proposal": "^KP-0[1-6]$"
+    "capability": "^KC-[ABQODE][0-9]{2}$",
+    "proposal": "^KP-0[1-6]$",
+    "quiz": "^M0[0-9]\\.QZ$",
+    "activity_note": "Если у вопроса или активности нет version, версия равна 1; изменение смысла вопроса или активности обязательно увеличивает version",
+    "capability_check": "Сборка проверяет фактическое существование KC-ID в docs/kernel-capabilities.md; тесты: по одному ID каждой группы A,B,Q,O,D,E проходят, несуществующий номер падает"
   },
   "module_layout": {
     "required_files": [
@@ -221,25 +224,54 @@
         ],
         "explanation": "string"
       }
-    }
+    },
+    "common_version": "integer version (по умолчанию 1)"
   },
   "progress_schema": {
     "schema": "course-progress/1",
     "fields": {
-      "course_version": "string, из build manifest",
+      "course_version": "string из build manifest",
       "route": "USER|BUILDER|ENGINEER",
-      "exported_at": "ISO date-time (не личные данные)",
+      "exported_at": "ISO date-time",
       "items": {
         "<unit id>": {
           "kind": "lesson|lab|quiz|case",
-          "content_version": "version при прохождении",
-          "state": "not_started|read|self_reported|auto_checked|passed|failed",
-          "score": "number 0..1, только quiz",
-          "attempts": "integer",
-          "critical_failed": "boolean"
+          "content_version": "semver юнита на момент прохождения",
+          "state": "см. таблицу допустимых сочетаний",
+          "score": "0..1 только quiz",
+          "attempts": "integer>=0",
+          "critical_failed": "boolean только quiz",
+          "questions": "только quiz: {<question id>:{\"v\":integer,\"correct\":boolean,\"attempts\":integer}}",
+          "activities": "только lab: {<activity id>:{\"v\":integer,\"state\":\"self_reported|auto_checked|failed\"}}"
         }
       }
     },
+    "allowed_kind_state": {
+      "lesson": [
+        "not_started",
+        "read"
+      ],
+      "case": [
+        "not_started",
+        "read"
+      ],
+      "lab": [
+        "not_started",
+        "partial",
+        "self_reported",
+        "auto_checked"
+      ],
+      "quiz": [
+        "not_started",
+        "failed",
+        "passed"
+      ]
+    },
+    "aggregation": {
+      "quiz": "passed, если доля верных среди вопросов роли >= pass_ratio и ни один critical-вопрос текущей версии не отвечен неверно в последней попытке; если вопросов роли нет, quiz не засчитывается как passed",
+      "lab": "auto_checked, если все обязательные активности роли в состоянии auto_checked либо self_reported (для checklist) и версии совпадают; partial — если выполнена часть; активность с версией, отличной от текущей, не засчитывается"
+    },
+    "version_invalidation": "при импорте результат вопроса или активности с v, не равной текущей, отбрасывается, агрегаты пересчитываются; при несовпадении content_version юнита пересчёт идёт по вложенным записям",
     "forbidden_fields": [
       "name",
       "email",
@@ -251,28 +283,36 @@
     "import_rules": [
       "JSON.parse без исполнения",
       "размер не более 262144 байт",
+      "строгая схема: любое неизвестное поле на любом уровне отвергает файл целиком",
       "неизвестные ID отбрасываются с предупреждением",
-      "версия контента не совпала: результат не засчитывается",
+      "недопустимое сочетание kind/state отвергает запись",
       "подтверждение перед заменой текущего прогресса"
     ],
-    "storage": "память страницы; localStorage используется только если доступно и необязательно; сайт работает при запрете хранилищ"
+    "storage": "Основной носитель — память единого клиентского приложения (см. navigation). localStorage — необязательное удобство при доступности; сайт работает при его запрете. reviewer_verified не создаётся.",
+    "tests": [
+      "изменение версии одного вопроса сбрасывает только его",
+      "неполный lab даёт partial",
+      "запрещённое сочетание kind/state отвергается",
+      "лишнее поле отвергается",
+      "пустой набор вопросов роли не даёт passed"
+    ]
   },
   "build": {
     "stack": "Node 20, markdown-it 15, gray-matter; выход: статические HTML-страницы + search-index.json + manifest.json; vanilla JS без фреймворков",
     "output_dir": "site/dist",
     "links": "относительные; сайт работает под любым base path",
     "allowlist": [
-      "modules/M0*/",
-      "paths/",
-      "cases/",
+      "modules/M0*/{README.md,lesson-*.md,lab.md,assessment.md,quiz.json,solutions.md}",
+      "paths/*.json",
+      "cases/U*.md",
       "docs/glossary.md",
       "docs/kernel-capabilities.md",
-      "docs/kernel-proposals/",
+      "docs/kernel-proposals/*.md",
       "docs/kernel-roadmap.md",
       "docs/fixture-contract.md",
       "docs/learning-paths.md",
       "docs/problem-patterns.md",
-      "labs/fixtures/",
+      "labs/fixtures/*/{fixture.json,README.md,data/**}",
       "sources/registry.json"
     ],
     "denylist": [
@@ -284,7 +324,16 @@
       "packets",
       "any path outside the allowlist"
     ],
-    "digest": "manifest.json содержит sha256 каждого файла и общий digest bundle"
+    "digest": "manifest.json содержит sha256 каждого файла и общий digest bundle",
+    "exclusions": [
+      "brief.md",
+      "evidence.json (публикуется только очищенная сводка evidence в manifest)",
+      "каталоги и файлы hidden, holdout, private, grader, oracle",
+      "временные файлы, symlink, выход за корень (path traversal)"
+    ],
+    "link_closure": "Ссылка на файл вне allowlist (например, внутренние документы авторского репозитория) при сборке детерминированно заменяется нессылочным текстом с пометкой «внутренний материал авторского репозитория, не опубликован»; опубликованные ссылки проверяются тестом замкнутости графа. Allowlist не расширяется до всего docs/ или research/.",
+    "glossary_anchors": "Единственное разрешённое исключение из запрета HTML: токен <a id=\"tNN\"></a> в docs/glossary.md преобразуется сборкой в якорь; любой другой HTML отвергается.",
+    "quiz_publication": "quiz.json и solutions.md публикуются как учебная самопроверка; доверенный hidden-грейдер не публикуется и не смешивается с ними."
   },
   "pages": [
     "/",
@@ -318,5 +367,10 @@
       "клавиатура и видимый focus",
       "масштаб 200%"
     ]
+  },
+  "navigation": {
+    "model": "Статические HTML-страницы остаются полноценными прямыми ссылками (работают без JS и при обновлении страницы). При наличии JS приложение перехватывает внутренние ссылки одного origin, загружает целевую страницу через fetch, подменяет контент main, обновляет history и title и держит состояние в памяти одного документа; состояние поэтому не теряется при переходах даже при запрете хранилищ.",
+    "limits": "Обновление страницы или закрытие вкладки при запрещённом хранилище теряет несохранённое состояние: на всех страницах видна кнопка «Сохранить прогресс в файл» и состояние «есть несохранённые изменения»; перед закрытием срабатывает beforeunload-предупреждение, пока есть такие изменения.",
+    "qa": "storage запрещён: урок -> практика -> тест -> страница прогресса: результаты предыдущих шагов сохранены в рамках сессии; после обновления страницы показано предупреждение и возможность импорта."
   }
 }
