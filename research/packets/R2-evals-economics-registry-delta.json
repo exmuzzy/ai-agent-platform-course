@@ -1,0 +1,72 @@
+[
+  {
+    "id_suggested": "hamel-evals-2024",
+    "title": "Your AI Product Needs Evals",
+    "url": "https://hamel.dev/blog/posts/evals/",
+    "author": "Hamel Husain",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "Открытый блог, свободный доступ",
+    "claims_ids": ["C01", "C02", "C04", "C09"]
+  },
+  {
+    "id_suggested": "anthropic-prompt-caching",
+    "title": "Prompt caching with Claude",
+    "url": "https://www.anthropic.com/news/prompt-caching",
+    "author": "Anthropic",
+    "date_read": "2026-11-08",
+    "type": "documentation",
+    "license_or_access": "Открытая страница вендора",
+    "claims_ids": ["C05"]
+  },
+  {
+    "id_suggested": "openai-evals-repo",
+    "title": "openai/evals — framework for evaluating LLMs and LLM systems",
+    "url": "https://github.com/openai/evals",
+    "author": "OpenAI",
+    "date_read": "2026-11-08",
+    "type": "repository",
+    "license_or_access": "MIT (логика и данные evals); OpenAI оставляет право использовать вклады",
+    "claims_ids": ["C10"]
+  },
+  {
+    "id_suggested": "metr-os-dev-rct-2025",
+    "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+    "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+    "author": "METR",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "Открытый отчёт",
+    "claims_ids": ["C07", "C09"]
+  },
+  {
+    "id_suggested": "cognition-dont-build-multi-agents",
+    "title": "Don't Build Multi-Agents",
+    "url": "https://cognition.ai/blog/dont-build-multi-agents",
+    "author": "Walden Yan (Cognition)",
+    "date_read": "2026-11-08",
+    "type": "discussion",
+    "license_or_access": "Открытый блог компании",
+    "claims_ids": ["C08"]
+  },
+  {
+    "id_suggested": "zheng-judging-llm-as-judge-2023",
+    "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+    "url": "https://arxiv.org/abs/2306.05685",
+    "author": "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng и др. (LMSYS)",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "arXiv, открытый препринт",
+    "claims_ids": ["C03"]
+  },
+  {
+    "id_suggested": "ong-routellm-2024",
+    "title": "RouteLLM: Learning to Route LLMs with Preference Data",
+    "url": "https://arxiv.org/abs/2406.18665",
+    "author": "Isaac Ong, Amjad Almahairi, Vincent Wu и др.",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "arXiv, открытый препринт",
+    "claims_ids": ["C06"]
+  }
+]
