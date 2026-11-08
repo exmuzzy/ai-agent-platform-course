@@ -72,7 +72,7 @@
       "id": "F02",
       "title": "Автономно исследовать индустрию и подходы",
       "kind": "expandable",
-      "status": "running",
+      "status": "review",
       "depends_on": [
         "F00"
       ],
@@ -94,8 +94,11 @@
         "Покрыты все 9 тем Сколково и U01–U12",
         "Версии, права и условия доступа проверены"
       ],
-      "evidence": [],
-      "expanded": true
+      "evidence": [
+        "branches course/F02-R1..R4: research/packets/*"
+      ],
+      "expanded": true,
+      "note": "4 packets ready_for_review, reviewer not yet dispatched (bootstrap quota exhausted); R3 partial"
     },
     {
       "id": "K00",
