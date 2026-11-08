@@ -75,3 +75,9 @@
 - **Следующий bounded task:** после доступа к baseline за 60 минут составить matrix «AGENTS/skills/hooks/MCP/cache/pin/replay» с smoke-test на capability, затем проверить одну ФТ end-to-end. До такой проверки все assertions о существующем harness остаются `unverified`.
 - **Уже можно писать:** дерево выбора code/workflow/agent, различение instructions/procedural skills/lifecycle hooks/tool contracts, исторически ограниченный разбор продуктивности и synthetic offline-практикум. Устаревающие детали caching/hooks давать с датой проверки, без цен и универсальных обещаний.
 - **Передача:** предложения реестра находятся в `R1-architecture-agentic-dev-registry-delta.json`; общий `sources/registry.json` не редактировался.
+
+## Корректировки по независимому review (координатор, 2026-11-08)
+
+- R1-C11: METR называет величину «speedup»; отрицательное значение в публикации означает сокращение времени, а +19% в первом исследовании — увеличение времени. Не переносить знак без этой оговорки.
+- R1-C02, C03, C04, C05, C09: опираются на документацию вендоров и экосистемы; статус `verified` означает «так заявлено в документации», независимое подтверждение не проводилось.
+- Gaps: контрдоводы именно к spec-driven/kernel+adapter паттерну (issues Spec Kit, отчёты о сбоях) не искались. В `pyproject.toml` pin Spec Kit есть упоминание bundled core assets для offline-установки (reported); использовать как гипотезу для offline-практикума после проверки.
