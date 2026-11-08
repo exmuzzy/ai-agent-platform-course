@@ -7,7 +7,7 @@
 | Очередь | Предложение | Приоритет | Что делаем в курсе | Зависимости | Следующий шаг до решения |
 |---|---|---|---|---|---|
 | 1 | [KP-02 Обеспеченные полномочия](kernel-proposals/KP-02-enforced-authority.md) | высокий, перед live-практикой | M05: различать prompt, hook, policy и runtime; offline-практикум | нет | офлайн-практикум: проверить, где правило реально принудительно |
-| 2 | [KP-01 Воспроизводимая поставка](kernel-proposals/KP-01-reproducible-delivery.md) | высокий | M00 приложение ENGINEER, M06: manifest, pin, откат | нет | офлайн-практикум по pin и замкнутости инструкций |
+| 2 | [KP-01 Воспроизводимая поставка](kernel-proposals/KP-01-reproducible-delivery.md) | высокий | M00 приложение ENGINEER и M02: цепочка инструкций и pin; M06: откат | нет | офлайн-практикум по pin и замкнутости инструкций |
 | 3 | [KP-04 Доверенная оценка](kernel-proposals/KP-04-trusted-evaluation.md) | высокий для ENGINEER | M04: oracle/mutant/empty/tamperer на синтетике | ответ KP-02 о принудительности путей | практикум и run record |
 | 4 | [KP-03 Сотруднический путь](kernel-proposals/KP-03-employee-path.md) | высокий для USER/BUILDER | M00 и M08: только проверенные шаги доступа | вопрос владельцу доступа | выяснить, что реально существует; ничего не выдумывать |
 | 5 | [KP-05 Ограниченная оркестрация](kernel-proposals/KP-05-bounded-orchestration.md) | средний | M06: граница pipeline и DAG, hard stop, счётчики | KC-A44 | документация и офлайн-проверка |

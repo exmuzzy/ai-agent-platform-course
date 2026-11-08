@@ -1,6 +1,6 @@
 # KP-04: доверенная оценка результата исполнителя
 
-Статус: hypothesis. Автор: роль repo-analyst/architect. Дата: 2026-11-08. Baseline: публичный аудит из `docs/harness-baseline.md` (код частично читался, ничего не запускалось). Capability: KC-A17, KC-A29, KC-A49, KC-A19.
+Статус: hypothesis. Автор: роль repo-analyst/architect. Дата: 2026-11-08. Baseline: публичный аудит из `docs/harness-baseline.md` (код частично читался; baseline включает offline-контроли — 40 unit-проверок durable state, 21 проверку routing и dry-eval oracle/mutant/empty с результатом PASS/FAIL/FAIL; это исторические результаты baseline, а не действия данного документа. Новый tampering reproducer этим документом не создавался и не запускался). Capability: KC-A17, KC-A29, KC-A49, KC-A19.
 
 ## Потребность сотрудника
 
@@ -15,7 +15,7 @@
 |---|---|
 | Код | Аудит: этапы dev→test→review идут фиксированной последовательностью, handoff содержит allowed/forbidden paths и критерии (KC-A17, KC-A29). |
 | Доставка | Не проверена. |
-| Offline-проверка | Не запускалась: нет synthetic reproducer. |
+| Offline-проверка | Исторически в baseline: unit-проверки и dry-eval oracle/mutant/empty (PASS/FAIL/FAIL) на одном синтетическом задании. Tampering reproducer не создавался и не запускался. |
 | Live | Не запускался. |
 | Доступность сотруднику | Не установлена. |
 

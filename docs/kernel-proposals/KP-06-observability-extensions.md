@@ -24,8 +24,8 @@
 Индустрия:
 - [MCP security best practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) описывают риски доверия к серверам и их инструментам.
 - [Invariant Labs: MCP GitHub vulnerability](https://invariantlabs.ai/blog/mcp-github-vulnerability) разбирает атаку через недоверенный контент при широких правах инструмента.
-- [OWASP Agentic Top 10 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) включает пункт про уязвимости цепочки поставок агентов (по пакету R3 прочитана только обложка).
-- Страница OpenTelemetry по GenAI в пакете пуста, на неё не опираемся.
+- [OWASP Agentic Top 10 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) включает пункт про уязвимости цепочки поставок агентов (по R3 S10/C18 прочитано оглавление [PDF-зеркала](https://storage.ghost.io/c/44/95/449506ca-034e-480f-9725-fcde08ef1cc1/content/files/2026/02/OWASP-Top-10-For-Agentic-Applications-2026.pdf), где назван ASI04; описания рисков не прочитаны).
+- Содержимое GenAI conventions OpenTelemetry не прочитано (доступна лишь страница Moved); сравнений с ними нет, требуется чтение.
 
 ## Варианты и граница изменения
 
