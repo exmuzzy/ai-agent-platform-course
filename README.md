@@ -10,7 +10,7 @@
 
 ## Быстрый старт
 
-- **Исполнителю:** начать с [промпта запуска](prompts/start-course-build.md), затем открыть [план создания курса](docs/course-build-plan.md).
+- **Исполнителю:** вставить [готовый промпт выполнения](prompts/run-course-build.md); он запускает [полное задание](prompts/start-course-build.md) по [плану](docs/course-build-plan.md). Рекомендованное распределение моделей описано в [памятке](docs/execution/recommended-models.md).
 - **Учащемуся:** посмотреть [учебную программу](docs/curriculum.md) и [карточки модулей](modules/README.md).
 - **Сотруднику:** выбрать [маршрут по роли](docs/learning-paths.md) и ознакомиться с [контрактом первого доступа](docs/employee-onboarding.md); это пока задания авторам, не готовые инструкции действующего сервиса.
 - **Оркестратору:** использовать [dynamic workflow](docs/execution/dynamic-workflow.md), [контракт задания](docs/execution/task-contract.md) и [backlog](workflow/backlog.json).
