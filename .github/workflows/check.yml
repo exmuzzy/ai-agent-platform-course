@@ -1,0 +1,20 @@
+name: Check course repository
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  offline-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate repository contracts
+        run: python3 scripts/check_repo.py
+      - name: Test validator
+        run: python3 -m unittest discover -s tests -v
+      - name: Check whitespace
+        run: git diff --check
