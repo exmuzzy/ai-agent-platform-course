@@ -142,7 +142,7 @@
       "id": "F03",
       "title": "Согласовать ролевые маршруты, curriculum и fixture contract",
       "kind": "expandable",
-      "status": "review",
+      "status": "done",
       "depends_on": [
         "F01",
         "F02",
@@ -167,7 +167,10 @@
         "Безопасность до первого запуска и инфраструктура во всех кейсах",
         "Карта K00 связана с модулями и проверкой результатов"
       ],
-      "evidence": []
+      "evidence": [
+        "docs/reviews/F03-W00.md",
+        "docs/glossary.md"
+      ]
     },
     {
       "id": "F04",
@@ -197,7 +200,7 @@
       "id": "W00",
       "title": "Спроектировать учебный сайт и контракт контента",
       "kind": "expandable",
-      "status": "review",
+      "status": "done",
       "depends_on": [
         "F03"
       ],
@@ -217,13 +220,16 @@
         "Схема задана до P00; runtime-копии текста не ведутся вручную",
         "Выбран реальный доступный способ публикации"
       ],
-      "evidence": []
+      "evidence": [
+        "docs/reviews/F03-W00.md",
+        "docs/site-architecture.md"
+      ]
     },
     {
       "id": "P00",
       "title": "Создать M00: первая задача сотрудника и инженерное приложение",
       "kind": "expandable",
-      "status": "review",
+      "status": "done",
       "depends_on": [
         "F03",
         "W00"
@@ -243,13 +249,16 @@
         "Проверка ответа, запрещённого действия, остановки и поддержки",
         "Симуляция не выдана за корпоративный доступ"
       ],
-      "evidence": []
+      "evidence": [
+        "modules/M00-baseline/README.md",
+        "labs/fixtures/regional-tickets/fixture.json"
+      ]
     },
     {
       "id": "Q00",
       "title": "Принять эталон глазами сотрудника и инженера",
       "kind": "task",
-      "status": "planned",
+      "status": "done",
       "depends_on": [
         "P00"
       ],
@@ -264,7 +273,11 @@
         "USER воспроизводится без инженерных подсказок",
         "Инженерное приложение проверено отдельно"
       ],
-      "evidence": []
+      "evidence": [
+        "docs/reviews/M00.md",
+        "docs/reviews/M00-recheck.md"
+      ],
+      "note": "rework x2; repair 2 applied by coordinator; delta (R2-01..06) to be rechecked independently at Q01"
     },
     {
       "id": "W01",
