@@ -44,7 +44,7 @@
       "id": "F01",
       "title": "Роли сотрудников, путь доступа и baseline harness",
       "kind": "task",
-      "status": "review",
+      "status": "done",
       "depends_on": [
         "F00"
       ],
@@ -65,7 +65,8 @@
         "Private data не опубликованы"
       ],
       "evidence": [
-        "docs/harness-baseline.md#отчёт-доступности-f01-запуск-course-run-20261108-1"
+        "docs/harness-baseline.md",
+        "docs/reviews/F01.md"
       ]
     },
     {
