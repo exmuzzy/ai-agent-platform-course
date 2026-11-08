@@ -1,0 +1,16 @@
+{
+  "name": "ai-agent-course-site",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/",
+    "serve": "node -e \"const h=require('http'),f=require('fs'),p=require('path'),r=p.resolve('dist'),t={'.html':'text/html;charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json'};h.createServer((q,s)=>{let u=decodeURIComponent(q.url.split('?')[0]),x=p.join(r,u);if(!x.startsWith(r))return s.end();if(f.existsSync(x)&&f.statSync(x).isDirectory())x=p.join(x,'index.html');f.readFile(x,(e,d)=>{s.writeHead(e?404:200,{'content-type':t[p.extname(x)]||'application/octet-stream'});s.end(e?'not found':d)})}).listen(8080,()=>console.log('http://localhost:8080'))\""
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^15.0.0"
+  }
+}
