@@ -56,7 +56,7 @@
     {
       "id": "M04",
       "path": "modules/M04-evals",
-      "status": "planned",
+      "status": "draft",
       "prerequisites": [
         "M02",
         "M03"
