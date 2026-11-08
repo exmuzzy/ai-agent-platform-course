@@ -1,5 +1,6 @@
 {
   "schema_version": 1,
+  "prerequisites_scope": "full_engineering_modules; employee routes are defined in docs/learning-paths.md",
   "modules": [
     {"id":"M00","path":"modules/M00-baseline","status":"planned","prerequisites":[],"source_ids":["SRC-02","SRC-07"]},
     {"id":"M01","path":"modules/M01-strategy","status":"planned","prerequisites":["M00"],"source_ids":["SRC-01","SRC-03","SRC-10"]},

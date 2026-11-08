@@ -1,6 +1,6 @@
 # Инструкции для агентов курса
 
-Работай на русском. Цель: создать учебный курс для человека с существующим harness, а не новый универсальный harness или ещё один workflow engine.
+Работай на русском. Цель: создать корпоративные курсы для сотрудников, использующих существующий harness и создающих ИИ-автоматизации, а не новый универсальный harness или ещё один workflow engine. Не предполагается, что все учащиеся инженеры.
 
 ## Порядок чтения
 
@@ -10,6 +10,8 @@
 4. Учебная программа: `docs/curriculum.md`; задания: `workflow/backlog.json`.
 5. Профиль и охват: `docs/learner-profile.md`, `docs/problem-patterns.md`.
 6. Исследование/модели: `docs/execution/research-workflow.md`, `docs/execution/model-routing.md`; инструкции ролей: `prompts/subagent-roles.md`.
+7. Для F01/F04 и инженерных практикумов: `docs/harness-baseline.md`, `docs/harness-course-map.md`. Это датированный входной аудит, не готовый экспорт, не закрытая задача backlog и не доказательство актуальности другой версии.
+8. Аудитория и путь сотрудника: `docs/learning-paths.md`, `docs/employee-onboarding.md`. Ядро, terminal, Git и Kubernetes не являются обязательными prerequisites USER; наличие регистрации или конструктора нельзя выдумывать.
 
 ## Непереступаемые границы
 

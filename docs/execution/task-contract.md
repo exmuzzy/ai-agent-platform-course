@@ -8,6 +8,7 @@
 {
   "task_id": "A04-LESSON-1",
   "role": "curriculum-author",
+  "learner_tracks": ["BUILDER", "ENGINEER"],
   "model_role": "lesson-author",
   "resolved_model_id": "<actual-runtime-model-id>",
   "model_reason": "Разрешённый профиль; принят калибровочный packet",
@@ -26,6 +27,7 @@
   "baseline_commit": "<actual-commit>",
   "read_paths": [
     "modules/M04-evals/brief.md",
+    "docs/learning-paths.md",
     "templates/lesson.md"
   ],
   "write_paths": ["modules/M04-evals/lesson-01.md"],
