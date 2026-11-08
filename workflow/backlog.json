@@ -108,7 +108,7 @@
       "id": "K00",
       "title": "Изучить возможности ядра и подготовить предложения развития",
       "kind": "expandable",
-      "status": "running",
+      "status": "done",
       "depends_on": [
         "F01",
         "F02"
@@ -131,7 +131,12 @@
         "При недоступном checkout принят только ограниченный отчёт unverified-current; F04 не закрыт",
         "Общий каталог и roadmap сводит оркестратор из принятых дельт"
       ],
-      "evidence": []
+      "evidence": [
+        "docs/kernel-capabilities.md",
+        "docs/kernel-roadmap.md",
+        "docs/reviews/K00.md"
+      ],
+      "note": "Review rework -> repair1 (REV-001..007) applied; repair delta checked by coordinator, independent delta re-check scheduled with F03 review"
     },
     {
       "id": "F03",
