@@ -6,7 +6,7 @@ import { createProgress, recordRead, recordQuizAnswer, refreshQuiz, recordActivi
 import { initActivities, readActivity } from './activities.js';
 
 const KEY = 'course-progress-v1';
-const ROLE_NAMES = { USER: 'Пользователь', BUILDER: 'Конструктор', ENGINEER: 'Инженер' };
+const ROLE_NAMES = { USER: 'Пользователь', BUILDER: 'Строитель', ENGINEER: 'Инженер' };
 const KIND_NAMES = { lesson: 'Урок', lab: 'Практика', quiz: 'Тест', case: 'Кейс' };
 const ST_NAMES = { not_started: 'не начато', read: 'прочитано', partial: 'частично', self_reported: 'отмечено вами', auto_checked: 'проверено автоматически', failed: 'не сдан', passed: 'сдан' };
 

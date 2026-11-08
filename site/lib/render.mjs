@@ -137,11 +137,12 @@ export function renderSite(content) {
 <a class="site-title" href="${root}">${esc(courseTitle)}</a>
 <div class="header-tools">
 <label class="role-picker">Роль
-<select data-role-select aria-label="Выбор роли">
+<select data-role-switch aria-label="Выбор роли">
 ${ROLES.map((r) => `<option value="${r}">${ROLE_NAME[r]} (${r})</option>`).join('\n')}
 </select></label>
 <span class="unsaved" data-unsaved hidden role="status">Есть несохранённые изменения</span>
-<button type="button" class="btn" data-save-progress>Сохранить прогресс в файл</button>
+<a class="continue" data-continue href="#" hidden>Продолжить</a>
+<button type="button" class="btn" data-save-file>Сохранить прогресс в файл</button>
 </div>
 </div>
 <nav class="site-nav" aria-label="Основная навигация">

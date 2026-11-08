@@ -15,7 +15,7 @@
     {
       "id": "M01",
       "path": "modules/M01-strategy",
-      "status": "planned",
+      "status": "draft",
       "prerequisites": [
         "M00"
       ],
