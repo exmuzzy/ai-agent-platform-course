@@ -1,0 +1,102 @@
+[
+  {
+    "id_suggested": "SRC-01",
+    "title": "Директор по ИИ: построение агентной платформы компании",
+    "url": "https://www.skolkovo.ru/programmes/direktor-po-ii-postroenie-agentnoj-platformy-kompanii/",
+    "author": "Школа управления СКОЛКОВО",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "Открытая маркетинговая страница; copyright; прочитаны HTML, Course JSON-LD и все девять блоков вкладок window.__NUXT__",
+    "claims_ids": ["R4-C01"]
+  },
+  {
+    "id_suggested": "R4-S02",
+    "title": "Building effective agents",
+    "url": "https://www.anthropic.com/research/building-effective-agents",
+    "author": "Anthropic Engineering",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "Открытая статья; лицензия повторного использования не установлена",
+    "claims_ids": ["R4-C02"]
+  },
+  {
+    "id_suggested": "R4-S03",
+    "title": "The Root Causes of Failure for Artificial Intelligence Projects and How They Can Succeed",
+    "url": "https://www.rand.org/pubs/research_reports/RRA2680-1.html",
+    "author": "James Ryseff; Brandon F. De Bruhl; Sydne J. Newberry / RAND",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "Открытый HTML research report; copyright RAND",
+    "claims_ids": ["R4-C03", "R4-C04", "R4-C11"]
+  },
+  {
+    "id_suggested": "R4-S04",
+    "title": "Document-level access control in Azure AI Search",
+    "url": "https://learn.microsoft.com/en-us/azure/search/search-document-level-access-overview",
+    "author": "Microsoft Learn",
+    "date_read": "2026-11-08",
+    "type": "documentation",
+    "license_or_access": "Открытая документация; лицензия отдельно не проверена; часть механизмов preview",
+    "claims_ids": ["R4-C05"]
+  },
+  {
+    "id_suggested": "R4-S05",
+    "title": "azure-search-openai-demo — pinned 558ffd397eddcfe4da5c85ebc285796b367eb9b2",
+    "url": "https://github.com/Azure-Samples/azure-search-openai-demo/tree/558ffd397eddcfe4da5c85ebc285796b367eb9b2",
+    "author": "Azure-Samples / Microsoft",
+    "date_read": "2026-11-08",
+    "type": "repository",
+    "license_or_access": "MIT; прочитаны LICENSE, README, app/backend/app.py, core/authentication.py, tests/test_authenticationhelper.py через GitHub API; код не запускался",
+    "claims_ids": ["R4-C06"]
+  },
+  {
+    "id_suggested": "R4-S06",
+    "title": "Issue #2086: 403 Error With Authentication, Without Authentication it is working fine",
+    "url": "https://github.com/Azure-Samples/azure-search-openai-demo/issues/2086",
+    "author": "Пользовательский bug report в Azure-Samples; наблюдение не воспроизведено",
+    "date_read": "2026-11-08",
+    "type": "discussion",
+    "license_or_access": "Публичные body/comments прочитаны GitHub API после ошибки fetch; отдельная лицензия обсуждения не установлена",
+    "claims_ids": ["R4-C07"]
+  },
+  {
+    "id_suggested": "R4-S07",
+    "title": "Sweden's Klarna shifts AI focus from cost cuts to growth",
+    "url": "https://www.reuters.com/business/swedens-klarna-shifts-ai-focus-cost-cuts-growth-2025-09-10/",
+    "author": "Supantha Mukherjee; Echo Wang / Reuters",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "Прочитан доступный текст; copyright Reuters",
+    "claims_ids": ["R4-C08"]
+  },
+  {
+    "id_suggested": "R4-S08",
+    "title": "Building an Agentic AI Platform on Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-platform-on-amazon-bedrock-agentcore/",
+    "author": "Omar Elkharbotly; Mia Chang; Siva Shanmugam / AWS",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "Открытая vendor guidance/reference blueprint; copyright AWS",
+    "claims_ids": ["R4-C09"]
+  },
+  {
+    "id_suggested": "R4-S09",
+    "title": "Is it true that 95 per cent of AI pilots fail?",
+    "url": "https://thesuperskills.com/research/is-it-true-that-95-per-cent-of-ai-pilots-fail",
+    "author": "Rahim Hirji / The SuperSkills Intelligence Company",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "Открытый вторичный evidence review, не peer-reviewed; лицензия не установлена",
+    "claims_ids": ["R4-C10", "R4-C11"]
+  },
+  {
+    "id_suggested": "R4-S10",
+    "title": "Generative AI at Work — NBER Working Paper 31161",
+    "url": "https://www.nber.org/papers/w31161",
+    "author": "Erik Brynjolfsson; Danielle Li; Lindsey R. Raymond",
+    "date_read": "2026-11-08",
+    "type": "article",
+    "license_or_access": "Открытые abstract, metadata, disclosures; полный working paper не прочитан",
+    "claims_ids": ["R4-C12"]
+  }
+]
