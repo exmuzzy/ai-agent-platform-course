@@ -8,6 +8,20 @@
 {
   "task_id": "A04-LESSON-1",
   "role": "curriculum-author",
+  "model_role": "lesson-author",
+  "resolved_model_id": "<actual-runtime-model-id>",
+  "model_reason": "Разрешённый профиль; принят калибровочный packet",
+  "budget_reservation": {
+    "run_id": "<persistent-run-id>",
+    "unit": "<runtime-enforced-unit>",
+    "reserved_total": "<positive-number-including-review>",
+    "worker_hard_limit": "<positive-number>",
+    "review_reserve": "<positive-number>",
+    "deadline_utc": "<actual-deadline>",
+    "stop_rule": "<verified-enforcement-and-cancellation>",
+    "repair_count": 0,
+    "bootstrap_used": "<persisted-count>"
+  },
   "goal": "Объяснить error analysis и построение evaluation set",
   "baseline_commit": "<actual-commit>",
   "read_paths": [
@@ -16,6 +30,13 @@
   ],
   "write_paths": ["modules/M04-evals/lesson-01.md"],
   "source_ids": ["SRC-07"],
+  "research_packet": "<actual-reviewed-packet-path>",
+  "learner_interest": "Evals и стоимость принятого результата",
+  "use_case_ids": ["U03"],
+  "skolkovo_topic": "Инженерия AI-агентов",
+  "harness_capability": "Указать actual baseline либо unverified",
+  "security_scope": "Sandbox, отсутствие реальных deploy/merge",
+  "infrastructure_scope": "Версии, CI/test runner, наблюдаемость",
   "facts_not_assumptions": [
     "Учащийся уже использует свой harness",
     "Реальное состояние harness определяется отдельным baseline"
@@ -29,7 +50,7 @@
   "limits": {
     "max_changed_files": 3,
     "max_repair_rounds": 2,
-    "live_api": false,
+    "lab_live_api": false,
     "nested_delegation": false
   },
   "stop_if": [
@@ -40,7 +61,9 @@
 }
 ```
 
-`<actual-commit>` в примере является placeholder и должен быть заменён перед dispatch. Не запускай задачу с несуществующим путём, неверным source id или открытым write scope «весь репозиторий».
+Поля в угловых скобках являются placeholders и должны быть заменены перед dispatch. Не запускай задачу с несуществующим путём, неверным source id, непроверенным model ID или открытым write scope «весь репозиторий»; исследовательский packet может честно указывать, что готового source packet ещё нет.
+
+Числовые placeholders budget заменяются числами в одной выбранной единице; `reserved_total` покрывает worker и review, а сумма активных резервов не превышает остаток run. Deadline и stop rule должны быть реально обеспечены runtime/координатором; обещание worker «не тратить много» не является hard limit. Счётчики берутся из checkpoint, не создаются заново при повторной попытке.
 
 ## Ответ worker
 
@@ -48,6 +71,9 @@
 {
   "task_id": "A04-LESSON-1",
   "result": "ready_for_review",
+  "actual_model_id": "<actual-id-or-unknown>",
+  "usage": {"status": "unknown", "input_tokens": null, "output_tokens": null},
+  "budget_result": {"run_id": "<same-run-id>", "consumed": null, "stop_reason": "<actual>"},
   "changed_paths": ["modules/M04-evals/lesson-01.md"],
   "checks": [
     {"name": "local-links", "status": "passed", "evidence_path": "<sanitized-report>"}
@@ -62,6 +88,8 @@
 ```
 
 Допустимые результаты worker: `ready_for_review`, `blocked`, `partial`. Worker не выставляет себе `done`; оркестратор сверяет реальный diff, проверки и независимый verdict.
+
+Если tool не раскрывает actual model, использовать `unknown`, а не копировать запрошенный ID как доказательство. При назначении review предпочтительна другая разрешённая семья модели; независимость контекста и реальные проверки обязательны в любом fallback.
 
 ## Review contract
 

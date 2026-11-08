@@ -4,6 +4,7 @@
 
 - **Уроки:** traces/metrics/SLO; retries, resume, idempotency и rollback.
 - **Выход:** telemetry contract, runbook и fault-injection report.
+- **Инфраструктура:** CPU/GPU serving, containers/Kubernetes как альтернативы, quotas, queues/cache/storage, CI/CD и capacity; установка только необходимых учебных компонентов.
 - **Lab:** crash после tool effect, timeout worker и несовместимая конфигурация.
 - **Проверка:** восстановление не дублирует действие; неопределённый исход переводится в reconcile.
 - **Изменение harness:** разрешён минимальный instrumentation/recovery patch с тестами.

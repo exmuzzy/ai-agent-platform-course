@@ -88,6 +88,33 @@ def local_link_errors(root, path, text):
     return errors
 
 
+def validate_case_ownership(tasks):
+    """Check task contracts, not whether unwritten cases are ready."""
+    errors, owners = [], {}
+    for task in tasks:
+        case_ids = task.get("case_ids", [])
+        if not isinstance(case_ids, list):
+            errors.append(f"{task.get('id')}: invalid case_ids list")
+            continue
+        for case_id in case_ids:
+            if not isinstance(case_id, str) or not re.fullmatch(r"U\d{2}", case_id):
+                errors.append(f"{task.get('id')}: invalid case id")
+                continue
+            if case_id in owners:
+                errors.append(f"{case_id}: duplicate case owner")
+            owners[case_id] = task.get("id")
+            scope = task.get("scope", [])
+            if not isinstance(scope, list):
+                scope = []
+            if not any(isinstance(value, str) and value.startswith(f"cases/{case_id}-")
+                       and value.endswith(".md") for value in scope):
+                errors.append(f"{case_id}: missing case write scope")
+    missing = {f"U{i:02}" for i in range(1, 13)} - set(owners)
+    if missing:
+        errors.append(f"missing case owners: {', '.join(sorted(missing))}")
+    return errors
+
+
 def validate(root):
     errors = []
     required = [
@@ -95,6 +122,9 @@ def validate(root):
         "docs/curriculum.md", "docs/publication-policy.md",
         "prompts/start-course-build.md", "sources/registry.json",
         "modules/manifest.json", "workflow/backlog.json",
+        "docs/learner-profile.md", "docs/problem-patterns.md",
+        "docs/execution/model-routing.md", "docs/execution/research-workflow.md",
+        "prompts/subagent-roles.md", "templates/research-packet.md", "templates/use-case.md",
     ]
     for name in required:
         if not (root / name).is_file():
@@ -150,6 +180,7 @@ def validate(root):
                 if not (root / value / name).is_file():
                     errors.append(f"{mid}: status requires {name}")
     errors += validate_dag(tasks, "depends_on")
+    errors += validate_case_ownership(tasks)
     tasks_by_id = {t["id"]: t for t in tasks}
     for task in tasks:
         tid = task["id"]

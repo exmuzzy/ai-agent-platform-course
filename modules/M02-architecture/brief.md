@@ -4,6 +4,7 @@
 
 - **Уроки:** границы компонентов; версионирование, оркестрация и совместимость.
 - **Выход:** схема, tool contract, version manifest и два ADR.
+- **Инфраструктура:** сравнение local/cloud/hybrid, hosted API/self-hosting, model gateway, хранения/очередей/state; минимальный выбор компонентов.
 - **Lab:** независимый synthetic client, pin runtime/instructions и rollback.
 - **Проверка:** отсутствие скрытой зависимости от рабочего HOME и соседнего checkout.
 - **Изменение harness:** минимальный patch допускается в отдельном worktree с regression.

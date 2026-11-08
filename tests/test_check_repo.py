@@ -1,3 +1,4 @@
+import copy
 import importlib.util
 import tempfile
 import unittest
@@ -53,6 +54,39 @@ class RepositoryChecks(unittest.TestCase):
     def test_empty_checkout_fails(self):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertTrue(CHECK.validate(Path(tmp)))
+
+    def test_case_owners_cover_requested_scope(self):
+        tasks = CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"]
+        self.assertEqual(CHECK.validate_case_ownership(tasks), [])
+
+    def test_missing_case_owner_rejected(self):
+        tasks = copy.deepcopy(CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"])
+        for task in tasks:
+            task["case_ids"] = [v for v in task.get("case_ids", []) if v != "U12"]
+        self.assertTrue(any("missing case owners" in v for v in CHECK.validate_case_ownership(tasks)))
+
+    def test_duplicate_case_owner_rejected(self):
+        tasks = copy.deepcopy(CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"])
+        tasks[0]["case_ids"] = ["U12"]
+        tasks[0]["scope"].append("cases/U12-planning.md")
+        self.assertTrue(any("duplicate" in v for v in CHECK.validate_case_ownership(tasks)))
+
+    def test_case_without_scope_rejected(self):
+        tasks = copy.deepcopy(CHECK.load_json(ROOT / "workflow/backlog.json")["tasks"])
+        for task in tasks:
+            task["scope"] = [v for v in task["scope"] if not v.startswith("cases/U12-")]
+        self.assertTrue(any("write scope" in v for v in CHECK.validate_case_ownership(tasks)))
+
+    def test_invalid_case_metadata_rejected_without_crash(self):
+        tasks = [
+            {"id": "bad-list", "case_ids": None},
+            {"id": "bad-scope", "case_ids": ["U01"], "scope": [None]},
+            {"id": "bad-id", "case_ids": [42], "scope": []},
+        ]
+        errors = CHECK.validate_case_ownership(tasks)
+        self.assertTrue(any("invalid case_ids list" in v for v in errors))
+        self.assertTrue(any("write scope" in v for v in errors))
+        self.assertTrue(any("invalid case id" in v for v in errors))
 
 
 if __name__ == "__main__":
