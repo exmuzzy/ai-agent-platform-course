@@ -3,17 +3,828 @@
   "checked_on": "2026-11-08",
   "scope": "Проверены перечисленные страницы; связанные практикумы и API не запускались",
   "sources": [
-    {"id":"SRC-01","title":"Директор по ИИ: построение агентной платформы компании","url":"https://www.skolkovo.ru/programmes/direktor-po-ii-postroenie-agentnoj-platformy-kompanii/","publisher":"СКОЛКОВО","language":"ru","type":"programme","access":"paid-benchmark","verified_at":"2026-11-08","modules":["M01","M02","M03","M04","M05","M06","M07","M08","M09"],"caveat":"Все 9 модулей извлечены из встроенных данных страницы; это описание программы, не доступ к учебным материалам","reuse":"link-only"},
-    {"id":"SRC-02","title":"Building effective agents","url":"https://www.anthropic.com/research/building-effective-agents?lang=en-US","publisher":"Anthropic","language":"en","type":"engineering-guide","access":"public-page","verified_at":"2026-11-08","modules":["M00","M02"],"caveat":"Архитектурные принципы; точные примеры API и стоимость использования проверять отдельно","reuse":"link-only"},
-    {"id":"SRC-03","title":"A practical guide to building agents","url":"https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents","publisher":"OpenAI","language":"en","type":"engineering-guide","access":"public-page","verified_at":"2026-11-08","modules":["M01","M02","M04"],"caveat":"Vendor guide; не гарантирует бесплатность API и не является доказательством ROI","reuse":"link-only"},
-    {"id":"SRC-04","title":"AI Agents Course","url":"https://huggingface.co/learn/agents-course/en/unit0/introduction","publisher":"Hugging Face","language":"en","type":"course","access":"free-course","verified_at":"2026-11-08","modules":["M03","M04"],"caveat":"Курс и сертификация названы бесплатными; все возможные compute/API расходы не подтверждены как бесплатные","reuse":"link-only"},
-    {"id":"SRC-05","title":"AI Agents for Beginners","url":"https://microsoft.github.io/ai-agents-for-beginners/","publisher":"Microsoft","language":"en","type":"course","access":"public-page","verified_at":"2026-11-08","modules":["M02","M03","M06"],"caveat":"Примеры ориентированы на Microsoft; наличие публичного кода не означает бесплатность облака","reuse":"link-only"},
-    {"id":"SRC-06","title":"LangChain Academy","url":"https://academy.langchain.com/","publisher":"LangChain","language":"en","type":"course-catalogue","access":"free-course","verified_at":"2026-11-08","modules":["M02","M04","M06"],"caveat":"Учебный контент бесплатный; сертификационный экзамен и инфраструктурные услуги отдельно","reuse":"link-only"},
-    {"id":"SRC-07","title":"Your AI Product Needs Evals","url":"https://hamel.dev/blog/posts/evals/index.html","publisher":"Hamel Husain","language":"en","type":"engineering-article","access":"public-page","verified_at":"2026-11-08","modules":["M00","M04"],"caveat":"Открытая статья, не обещание бесплатного доступа к отдельному авторскому курсу","reuse":"link-only"},
-    {"id":"SRC-08","title":"OWASP Top 10 for Agentic Applications for 2026","url":"https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/","publisher":"OWASP GenAI Security Project","language":"en","type":"security-guidance","access":"public-page","verified_at":"2026-11-08","modules":["M05"],"caveat":"Проверена страница ресурса; полный текст рисков и актуальную редакцию проверять перед уроком","reuse":"link-only"},
-    {"id":"SRC-09","title":"AI Risk Management Framework","url":"https://www.nist.gov/itl/ai-risk-management-framework","publisher":"NIST","language":"en","type":"risk-framework","access":"public-page","verified_at":"2026-11-08","modules":["M05","M08"],"caveat":"Добровольная рамка, не юридическое заключение и не сертификат соответствия","reuse":"link-only"},
-    {"id":"SRC-10","title":"Generative AI Leader learning path announcement","url":"https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai/","publisher":"Google Cloud","language":"en","type":"learning-path","access":"free-course","verified_at":"2026-11-08","modules":["M01","M08"],"caveat":"Путь заявлен бесплатным; экзамен платный, контент vendor-specific","reuse":"link-only"},
-    {"id":"SRC-11","title":"FinOps for AI Overview","url":"https://www.finops.org/wg/finops-for-ai-overview/","publisher":"FinOps Foundation","language":"en","type":"industry-guidance","access":"public-page","verified_at":"2026-11-08","modules":["M07"],"caveat":"Методика связи расходов с успешным outcome; входные данные компании нужно измерять отдельно","reuse":"link-only"},
-    {"id":"SRC-12","title":"Mapping to OWASP top 10 for LLM applications","url":"https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-security/owasp-top-ten.html","publisher":"AWS","language":"en","type":"security-guidance","access":"public-page","verified_at":"2026-11-08","modules":["M03","M05","M06"],"caveat":"Mapping относится к OWASP LLM Top 10 2025; не подменять этим редакцию Agentic 2026","reuse":"link-only"}
+    {
+      "id": "SRC-01",
+      "title": "Директор по ИИ: построение агентной платформы компании",
+      "url": "https://www.skolkovo.ru/programmes/direktor-po-ii-postroenie-agentnoj-platformy-kompanii/",
+      "publisher": "СКОЛКОВО",
+      "language": "ru",
+      "type": "programme",
+      "access": "paid-benchmark",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09"
+      ],
+      "caveat": "Все 9 модулей извлечены из встроенных данных страницы; это описание программы, не доступ к учебным материалам",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-02",
+      "title": "Building effective agents",
+      "url": "https://www.anthropic.com/research/building-effective-agents?lang=en-US",
+      "publisher": "Anthropic",
+      "language": "en",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02"
+      ],
+      "caveat": "Архитектурные принципы; точные примеры API и стоимость использования проверять отдельно",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-03",
+      "title": "A practical guide to building agents",
+      "url": "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents",
+      "publisher": "OpenAI",
+      "language": "en",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M02",
+        "M04"
+      ],
+      "caveat": "Vendor guide; не гарантирует бесплатность API и не является доказательством ROI",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-04",
+      "title": "AI Agents Course",
+      "url": "https://huggingface.co/learn/agents-course/en/unit0/introduction",
+      "publisher": "Hugging Face",
+      "language": "en",
+      "type": "course",
+      "access": "free-course",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M03",
+        "M04"
+      ],
+      "caveat": "Курс и сертификация названы бесплатными; все возможные compute/API расходы не подтверждены как бесплатные",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-05",
+      "title": "AI Agents for Beginners",
+      "url": "https://microsoft.github.io/ai-agents-for-beginners/",
+      "publisher": "Microsoft",
+      "language": "en",
+      "type": "course",
+      "access": "public-page",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M02",
+        "M03",
+        "M06"
+      ],
+      "caveat": "Примеры ориентированы на Microsoft; наличие публичного кода не означает бесплатность облака",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-06",
+      "title": "LangChain Academy",
+      "url": "https://academy.langchain.com/",
+      "publisher": "LangChain",
+      "language": "en",
+      "type": "course-catalogue",
+      "access": "free-course",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M02",
+        "M04",
+        "M06"
+      ],
+      "caveat": "Учебный контент бесплатный; сертификационный экзамен и инфраструктурные услуги отдельно",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-07",
+      "title": "Your AI Product Needs Evals",
+      "url": "https://hamel.dev/blog/posts/evals/index.html",
+      "publisher": "Hamel Husain",
+      "language": "en",
+      "type": "engineering-article",
+      "access": "public-page",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M04"
+      ],
+      "caveat": "Открытая статья, не обещание бесплатного доступа к отдельному авторскому курсу",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-08",
+      "title": "OWASP Top 10 for Agentic Applications for 2026",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "publisher": "OWASP GenAI Security Project",
+      "language": "en",
+      "type": "security-guidance",
+      "access": "public-page",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05"
+      ],
+      "caveat": "Проверена страница ресурса; полный текст рисков и актуальную редакцию проверять перед уроком",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-09",
+      "title": "AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "publisher": "NIST",
+      "language": "en",
+      "type": "risk-framework",
+      "access": "public-page",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05",
+        "M08"
+      ],
+      "caveat": "Добровольная рамка, не юридическое заключение и не сертификат соответствия",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-10",
+      "title": "Generative AI Leader learning path announcement",
+      "url": "https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai/",
+      "publisher": "Google Cloud",
+      "language": "en",
+      "type": "learning-path",
+      "access": "free-course",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M08"
+      ],
+      "caveat": "Путь заявлен бесплатным; экзамен платный, контент vendor-specific",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-11",
+      "title": "FinOps for AI Overview",
+      "url": "https://www.finops.org/wg/finops-for-ai-overview/",
+      "publisher": "FinOps Foundation",
+      "language": "en",
+      "type": "industry-guidance",
+      "access": "public-page",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M07"
+      ],
+      "caveat": "Методика связи расходов с успешным outcome; входные данные компании нужно измерять отдельно",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-12",
+      "title": "Mapping to OWASP top 10 for LLM applications",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-security/owasp-top-ten.html",
+      "publisher": "AWS",
+      "language": "en",
+      "type": "security-guidance",
+      "access": "public-page",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M03",
+        "M05",
+        "M06"
+      ],
+      "caveat": "Mapping относится к OWASP LLM Top 10 2025; не подменять этим редакцию Agentic 2026",
+      "reuse": "link-only"
+    },
+    {
+      "id": "SRC-13",
+      "title": "Building effective agents",
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Erik S.; Barry Zhang / Anthropic",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-14",
+      "title": "Effective context engineering for AI agents",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Anthropic",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-15",
+      "title": "AGENTS.md",
+      "url": "https://agents.md/",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "AGENTS.md ecosystem / Agentic AI Foundation, Linux Foundation",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-16",
+      "title": "What are skills?",
+      "url": "https://agentskills.io/what-are-skills",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "Agent Skills; originally developed by Anthropic",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-17",
+      "title": "Model Context Protocol: Tools (2025-06-18)",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "Model Context Protocol / LF Projects",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-18",
+      "title": "Claude Code Hooks reference",
+      "url": "https://code.claude.com/docs/en/hooks",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "Anthropic",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-19",
+      "title": "Prompt caching",
+      "url": "https://platform.openai.com/docs/guides/prompt-caching",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "OpenAI",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-20",
+      "title": "github/spec-kit at c43849408ac0de2ca6a52f14eaae71449776057b",
+      "url": "https://github.com/github/spec-kit/tree/c43849408ac0de2ca6a52f14eaae71449776057b",
+      "type": "repository",
+      "access": "public-page",
+      "publisher": "GitHub, Inc. / contributors",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-21",
+      "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+      "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "METR",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-22",
+      "title": "We are Changing our Developer Productivity Experiment Design",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "METR",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-23",
+      "title": "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers",
+      "url": "https://www.microsoft.com/en-us/research/publication/the-effects-of-generative-ai-on-high-skilled-work-evidence-from-three-field-experiments-with-software-developers/",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Zheyuan (Kevin) Cui; Mert Demirer; Sonia Jaffe; Leon Musolff; Sida Peng; Tobias Salz",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "caveat": "Прочитано в research packet R1-architecture-agentic-dev.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R1-architecture-agentic-dev.md"
+    },
+    {
+      "id": "SRC-24",
+      "title": "Your AI Product Needs Evals",
+      "url": "https://hamel.dev/blog/posts/evals/",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Hamel Husain",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M04",
+        "M07"
+      ],
+      "caveat": "Прочитано в research packet R2-evals-economics.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R2-evals-economics.md"
+    },
+    {
+      "id": "SRC-25",
+      "title": "Prompt caching with Claude",
+      "url": "https://www.anthropic.com/news/prompt-caching",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "Anthropic",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M04",
+        "M07"
+      ],
+      "caveat": "Прочитано в research packet R2-evals-economics.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R2-evals-economics.md"
+    },
+    {
+      "id": "SRC-26",
+      "title": "openai/evals — framework for evaluating LLMs and LLM systems",
+      "url": "https://github.com/openai/evals",
+      "type": "repository",
+      "access": "public-page",
+      "publisher": "OpenAI",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M04",
+        "M07"
+      ],
+      "caveat": "Прочитано в research packet R2-evals-economics.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R2-evals-economics.md"
+    },
+    {
+      "id": "SRC-27",
+      "title": "Don't Build Multi-Agents",
+      "url": "https://cognition.ai/blog/dont-build-multi-agents",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Walden Yan (Cognition)",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M04",
+        "M07"
+      ],
+      "caveat": "Прочитано в research packet R2-evals-economics.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R2-evals-economics.md"
+    },
+    {
+      "id": "SRC-28",
+      "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+      "url": "https://arxiv.org/abs/2306.05685",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Lianmin Zheng, Wei-Lin Chiang, Ying Sheng и др. (LMSYS)",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M04",
+        "M07"
+      ],
+      "caveat": "Прочитано в research packet R2-evals-economics.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R2-evals-economics.md"
+    },
+    {
+      "id": "SRC-29",
+      "title": "RouteLLM: Learning to Route LLMs with Preference Data",
+      "url": "https://arxiv.org/abs/2406.18665",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Isaac Ong, Amjad Almahairi, Vincent Wu и др.",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M04",
+        "M07"
+      ],
+      "caveat": "Прочитано в research packet R2-evals-economics.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R2-evals-economics.md"
+    },
+    {
+      "id": "SRC-30",
+      "title": "How we built our multi-agent research system",
+      "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Anthropic",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M04",
+        "M07"
+      ],
+      "caveat": "Прочитано в research packet R2-evals-economics.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R2-evals-economics.md"
+    },
+    {
+      "id": "SRC-31",
+      "title": "The lethal trifecta for AI agents",
+      "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Simon Willison",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05",
+        "M06"
+      ],
+      "caveat": "Прочитано в research packet R3-security-ops.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R3-security-ops.md"
+    },
+    {
+      "id": "SRC-32",
+      "title": "Agents Rule of Two: A Practical Approach to AI Agent Security",
+      "url": "https://ai.meta.com/blog/practical-ai-agent-security/",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Meta",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05",
+        "M06"
+      ],
+      "caveat": "Прочитано в research packet R3-security-ops.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R3-security-ops.md"
+    },
+    {
+      "id": "SRC-33",
+      "title": "Security Best Practices - Model Context Protocol",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "Model Context Protocol project",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05",
+        "M06"
+      ],
+      "caveat": "Прочитано в research packet R3-security-ops.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R3-security-ops.md"
+    },
+    {
+      "id": "SRC-34",
+      "title": "Activity Definition | Temporal Documentation",
+      "url": "https://docs.temporal.io/activity-definition",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "Temporal Technologies",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05",
+        "M06"
+      ],
+      "caveat": "Прочитано в research packet R3-security-ops.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R3-security-ops.md"
+    },
+    {
+      "id": "SRC-35",
+      "title": "temporalio/temporal @ 74c71f963b99f366f2adf8c503ecd785b0d8b4dc (LICENSE, retry.go, retry_test.go)",
+      "url": "https://github.com/temporalio/temporal",
+      "type": "repository",
+      "access": "public-page",
+      "publisher": "temporalio",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05",
+        "M06"
+      ],
+      "caveat": "Прочитано в research packet R3-security-ops.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R3-security-ops.md"
+    },
+    {
+      "id": "SRC-36",
+      "title": "GitHub MCP Exploited: Accessing private repositories via MCP",
+      "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Marco Milanta, Luca Beurer-Kellner (Invariant Labs)",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05",
+        "M06"
+      ],
+      "caveat": "Прочитано в research packet R3-security-ops.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R3-security-ops.md"
+    },
+    {
+      "id": "SRC-37",
+      "title": "Moved: Generative AI semantic conventions",
+      "url": "https://opentelemetry.io/docs/specs/semconv/gen-ai/",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "OpenTelemetry Authors",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05",
+        "M06"
+      ],
+      "caveat": "Прочитано в research packet R3-security-ops.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R3-security-ops.md"
+    },
+    {
+      "id": "SRC-38",
+      "title": "Activity execution is blocked on (BLOCKED on Feature.get) — Temporal Community Forum",
+      "url": "https://community.temporal.io/t/activity-execution-is-blocked-on-blocked-on-feature-get/4391",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Temporal Community Forum (atullimaye19, Muazzam_Waheed, tihomir, maxim)",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05",
+        "M06"
+      ],
+      "caveat": "Прочитано в research packet R3-security-ops.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R3-security-ops.md"
+    },
+    {
+      "id": "SRC-39",
+      "title": "OWASP Top 10 for Agentic Applications 2026 (PDF, зеркало на storage.ghost.io)",
+      "url": "https://storage.ghost.io/c/44/95/449506ca-034e-480f-9725-fcde08ef1cc1/content/files/2026/02/OWASP-Top-10-For-Agentic-Applications-2026.pdf",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "OWASP GenAI Security Project",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M05",
+        "M06"
+      ],
+      "caveat": "Прочитано в research packet R3-security-ops.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R3-security-ops.md"
+    },
+    {
+      "id": "SRC-40",
+      "title": "The Root Causes of Failure for Artificial Intelligence Projects and How They Can Succeed",
+      "url": "https://www.rand.org/pubs/research_reports/RRA2680-1.html",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "James Ryseff; Brandon F. De Bruhl; Sydne J. Newberry / RAND",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M03",
+        "M08",
+        "M09"
+      ],
+      "caveat": "Прочитано в research packet R4-strategy-adoption.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R4-strategy-adoption.md"
+    },
+    {
+      "id": "SRC-41",
+      "title": "Document-level access control in Azure AI Search",
+      "url": "https://learn.microsoft.com/en-us/azure/search/search-document-level-access-overview",
+      "type": "engineering-guide",
+      "access": "public-page",
+      "publisher": "Microsoft Learn",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M03",
+        "M08",
+        "M09"
+      ],
+      "caveat": "Прочитано в research packet R4-strategy-adoption.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R4-strategy-adoption.md"
+    },
+    {
+      "id": "SRC-42",
+      "title": "azure-search-openai-demo — pinned 558ffd397eddcfe4da5c85ebc285796b367eb9b2",
+      "url": "https://github.com/Azure-Samples/azure-search-openai-demo/tree/558ffd397eddcfe4da5c85ebc285796b367eb9b2",
+      "type": "repository",
+      "access": "public-page",
+      "publisher": "Azure-Samples / Microsoft",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M03",
+        "M08",
+        "M09"
+      ],
+      "caveat": "Прочитано в research packet R4-strategy-adoption.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R4-strategy-adoption.md"
+    },
+    {
+      "id": "SRC-43",
+      "title": "Issue #2086: 403 Error With Authentication, Without Authentication it is working fine",
+      "url": "https://github.com/Azure-Samples/azure-search-openai-demo/issues/2086",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Пользовательский bug report в Azure-Samples; наблюдение не воспроизведено",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M03",
+        "M08",
+        "M09"
+      ],
+      "caveat": "Прочитано в research packet R4-strategy-adoption.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R4-strategy-adoption.md"
+    },
+    {
+      "id": "SRC-44",
+      "title": "Sweden's Klarna shifts AI focus from cost cuts to growth",
+      "url": "https://www.reuters.com/business/swedens-klarna-shifts-ai-focus-cost-cuts-growth-2025-09-10/",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Supantha Mukherjee; Echo Wang / Reuters",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M03",
+        "M08",
+        "M09"
+      ],
+      "caveat": "Прочитано в research packet R4-strategy-adoption.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R4-strategy-adoption.md"
+    },
+    {
+      "id": "SRC-45",
+      "title": "Building an Agentic AI Platform on Amazon Bedrock AgentCore",
+      "url": "https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-platform-on-amazon-bedrock-agentcore/",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Omar Elkharbotly; Mia Chang; Siva Shanmugam / AWS",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M03",
+        "M08",
+        "M09"
+      ],
+      "caveat": "Прочитано в research packet R4-strategy-adoption.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R4-strategy-adoption.md"
+    },
+    {
+      "id": "SRC-46",
+      "title": "Is it true that 95 per cent of AI pilots fail?",
+      "url": "https://thesuperskills.com/research/is-it-true-that-95-per-cent-of-ai-pilots-fail",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Rahim Hirji / The SuperSkills Intelligence Company",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M03",
+        "M08",
+        "M09"
+      ],
+      "caveat": "Прочитано в research packet R4-strategy-adoption.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R4-strategy-adoption.md"
+    },
+    {
+      "id": "SRC-47",
+      "title": "Generative AI at Work — NBER Working Paper 31161",
+      "url": "https://www.nber.org/papers/w31161",
+      "type": "engineering-article",
+      "access": "public-page",
+      "publisher": "Erik Brynjolfsson; Danielle Li; Lindsey R. Raymond",
+      "language": "en",
+      "verified_at": "2026-11-08",
+      "modules": [
+        "M01",
+        "M03",
+        "M08",
+        "M09"
+      ],
+      "caveat": "Прочитано в research packet R4-strategy-adoption.md; ограничения и статус claims см. в packet; независимо проверено reviewer выборочно",
+      "reuse": "link-only",
+      "source_packet": "research/packets/R4-strategy-adoption.md"
+    }
   ]
 }
