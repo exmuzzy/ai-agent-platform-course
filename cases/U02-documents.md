@@ -3,7 +3,7 @@ id: U02
 title: "U02: Извлечение и проверка данных документов - схема, валидация и ручная проверка"
 version: 0.1.0
 roles: [USER, BUILDER, ENGINEER]
-source_ids: [SRC-17, SRC-07, SRC-24, SRC-12, SRC-05]
+source_ids: [SRC-17, SRC-07, SRC-24, SRC-12, SRC-05, SRC-02, SRC-28]
 modules: [M02, M03, M04]
 capabilities: [KC-Q02, KC-Q04, KC-B08, KC-A13]
 ---

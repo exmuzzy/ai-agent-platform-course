@@ -70,7 +70,7 @@
     {
       "id": "M05",
       "path": "modules/M05-security",
-      "status": "planned",
+      "status": "draft",
       "prerequisites": [
         "M03",
         "M04"

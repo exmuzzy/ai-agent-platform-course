@@ -3,7 +3,7 @@ id: U06
 title: "U06: Аналитика, SQL и отчётность - read-only помощник с проверкой результата"
 version: 0.1.0
 roles: [USER, BUILDER, ENGINEER]
-source_ids: [SRC-17, SRC-24, SRC-07, SRC-28, SRC-12]
+source_ids: [SRC-17, SRC-24, SRC-07, SRC-28, SRC-12, SRC-02, SRC-31, SRC-36]
 modules: [M03, M04, M05]
 capabilities: [KC-Q01, KC-Q04, KC-B08, KC-A13]
 ---
