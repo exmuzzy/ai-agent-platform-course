@@ -28,7 +28,7 @@
     {
       "id": "M02",
       "path": "modules/M02-architecture",
-      "status": "planned",
+      "status": "draft",
       "prerequisites": [
         "M00",
         "M01"
