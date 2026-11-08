@@ -2,15 +2,145 @@
   "schema_version": 1,
   "prerequisites_scope": "full_engineering_modules; employee routes are defined in docs/learning-paths.md",
   "modules": [
-    {"id":"M00","path":"modules/M00-baseline","status":"planned","prerequisites":[],"source_ids":["SRC-02","SRC-07"]},
-    {"id":"M01","path":"modules/M01-strategy","status":"planned","prerequisites":["M00"],"source_ids":["SRC-01","SRC-03","SRC-10"]},
-    {"id":"M02","path":"modules/M02-architecture","status":"planned","prerequisites":["M00","M01"],"source_ids":["SRC-02","SRC-03","SRC-05","SRC-06"]},
-    {"id":"M03","path":"modules/M03-data-context","status":"planned","prerequisites":["M02"],"source_ids":["SRC-04","SRC-05","SRC-12"]},
-    {"id":"M04","path":"modules/M04-evals","status":"planned","prerequisites":["M02","M03"],"source_ids":["SRC-03","SRC-06","SRC-07"]},
-    {"id":"M05","path":"modules/M05-security","status":"planned","prerequisites":["M03","M04"],"source_ids":["SRC-08","SRC-09","SRC-12"]},
-    {"id":"M06","path":"modules/M06-agentops","status":"planned","prerequisites":["M04","M05"],"source_ids":["SRC-05","SRC-06","SRC-12"]},
-    {"id":"M07","path":"modules/M07-economics","status":"planned","prerequisites":["M01","M04","M06"],"source_ids":["SRC-11"]},
-    {"id":"M08","path":"modules/M08-operating-model","status":"planned","prerequisites":["M01","M05"],"source_ids":["SRC-09","SRC-10"]},
-    {"id":"M09","path":"modules/M09-capstone","status":"planned","prerequisites":["M01","M02","M03","M04","M05","M06","M07","M08"],"source_ids":["SRC-01","SRC-07","SRC-09","SRC-11"]}
+    {
+      "id": "M00",
+      "path": "modules/M00-baseline",
+      "status": "draft",
+      "prerequisites": [],
+      "source_ids": [
+        "SRC-02",
+        "SRC-07"
+      ]
+    },
+    {
+      "id": "M01",
+      "path": "modules/M01-strategy",
+      "status": "planned",
+      "prerequisites": [
+        "M00"
+      ],
+      "source_ids": [
+        "SRC-01",
+        "SRC-03",
+        "SRC-10"
+      ]
+    },
+    {
+      "id": "M02",
+      "path": "modules/M02-architecture",
+      "status": "planned",
+      "prerequisites": [
+        "M00",
+        "M01"
+      ],
+      "source_ids": [
+        "SRC-02",
+        "SRC-03",
+        "SRC-05",
+        "SRC-06"
+      ]
+    },
+    {
+      "id": "M03",
+      "path": "modules/M03-data-context",
+      "status": "planned",
+      "prerequisites": [
+        "M02"
+      ],
+      "source_ids": [
+        "SRC-04",
+        "SRC-05",
+        "SRC-12"
+      ]
+    },
+    {
+      "id": "M04",
+      "path": "modules/M04-evals",
+      "status": "planned",
+      "prerequisites": [
+        "M02",
+        "M03"
+      ],
+      "source_ids": [
+        "SRC-03",
+        "SRC-06",
+        "SRC-07"
+      ]
+    },
+    {
+      "id": "M05",
+      "path": "modules/M05-security",
+      "status": "planned",
+      "prerequisites": [
+        "M03",
+        "M04"
+      ],
+      "source_ids": [
+        "SRC-08",
+        "SRC-09",
+        "SRC-12"
+      ]
+    },
+    {
+      "id": "M06",
+      "path": "modules/M06-agentops",
+      "status": "planned",
+      "prerequisites": [
+        "M04",
+        "M05"
+      ],
+      "source_ids": [
+        "SRC-05",
+        "SRC-06",
+        "SRC-12"
+      ]
+    },
+    {
+      "id": "M07",
+      "path": "modules/M07-economics",
+      "status": "planned",
+      "prerequisites": [
+        "M01",
+        "M04",
+        "M06"
+      ],
+      "source_ids": [
+        "SRC-11"
+      ]
+    },
+    {
+      "id": "M08",
+      "path": "modules/M08-operating-model",
+      "status": "planned",
+      "prerequisites": [
+        "M01",
+        "M05"
+      ],
+      "source_ids": [
+        "SRC-09",
+        "SRC-10"
+      ]
+    },
+    {
+      "id": "M09",
+      "path": "modules/M09-capstone",
+      "status": "planned",
+      "prerequisites": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08"
+      ],
+      "source_ids": [
+        "SRC-01",
+        "SRC-07",
+        "SRC-09",
+        "SRC-11"
+      ]
+    }
   ]
 }

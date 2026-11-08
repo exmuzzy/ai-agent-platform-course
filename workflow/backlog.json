@@ -142,7 +142,7 @@
       "id": "F03",
       "title": "Согласовать ролевые маршруты, curriculum и fixture contract",
       "kind": "expandable",
-      "status": "planned",
+      "status": "review",
       "depends_on": [
         "F01",
         "F02",
@@ -197,7 +197,7 @@
       "id": "W00",
       "title": "Спроектировать учебный сайт и контракт контента",
       "kind": "expandable",
-      "status": "planned",
+      "status": "review",
       "depends_on": [
         "F03"
       ],
@@ -223,7 +223,7 @@
       "id": "P00",
       "title": "Создать M00: первая задача сотрудника и инженерное приложение",
       "kind": "expandable",
-      "status": "planned",
+      "status": "review",
       "depends_on": [
         "F03",
         "W00"
